@@ -3,7 +3,7 @@
     "containerDefinitions": [
       {
         "name": "crud",
-        "image": "<your_account_id>.dkr.ecr.<your_region>.amazonaws.com/crud:latest",
+        "image": "254774371055.dkr.ecr.us-east-1.amazonaws.com/crud:latest",
         "memory": 512,
         "cpu": 256,
         "essential": true,
