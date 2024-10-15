@@ -65,8 +65,11 @@ jobs:
       - name: Deploy to Amazon ECS
         run: |
           # Register the new task definition
+          echo "Available clusters:"
+          aws ecs list-clusters --region $AWS_REGION
+          echo "Updating service..."
           NEW_TASK_DEFINITION=$(aws ecs register-task-definition --cli-input-json file://.github/workflows/task-definition.json)
-          
+        
           # Update the service to use the new task definition
           TASK_DEFINITION_ARN=$(echo $NEW_TASK_DEFINITION | jq -r '.taskDefinition.taskDefinitionArn')
           aws ecs update-service --cluster ${{ env.ECS_CLUSTER }} --service ${{ env.ECS_SERVICE }} --force-new-deployment --task-definition $TASK_DEFINITION_ARN
