@@ -54,6 +54,14 @@ jobs:
           docker push 254774371055.dkr.ecr.us-east-1.amazonaws.com/crud:latest
           #docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/${{ env.ECR_REPOSITORY }}:latest
 
+      - name: List all files
+        run: |
+         ls -la
+
+      - name: List all files
+        run: |
+          pwd
+
       - name: Deploy to Amazon ECS
         run: |
           # Register the new task definition
