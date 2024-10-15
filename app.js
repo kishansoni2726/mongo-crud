@@ -7,7 +7,7 @@ const app = express();
 const PORT = 3000;
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/userdb', {});
+mongoose.connect('mongodb://host.docker.internal:27017/userdb', {});
 
 // Middleware
 app.set('view engine', 'ejs');
