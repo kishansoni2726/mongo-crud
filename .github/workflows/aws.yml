@@ -48,10 +48,6 @@ jobs:
           docker tag crud:latest 254774371055.dkr.ecr.us-east-1.amazonaws.com/crud:latest
           #docker tag ${{ env.ECR_REPOSITORY }}:latest ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/${{ env.ECR_REPOSITORY }}:latest
       
-      - name: Validating Task Definition
-        run: |
-          aws ecs register-task-definition --cli-input-json .github/workflows/task-definition.json
-
       
       - name: Push Docker image to ECR
         run: |
@@ -61,7 +57,7 @@ jobs:
       - name: Deploy to Amazon ECS
         run: |
           # Register the new task definition
-          NEW_TASK_DEFINITION=$(aws ecs register-task-definition --cli-input-json file://${{ env.ECS_TASK_DEFINITION }})
+          NEW_TASK_DEFINITION=$(aws ecs register-task-definition --cli-input-json task-definition.json)
           
           # Update the service to use the new task definition
           TASK_DEFINITION_ARN=$(echo $NEW_TASK_DEFINITION | jq -r '.taskDefinition.taskDefinitionArn')
