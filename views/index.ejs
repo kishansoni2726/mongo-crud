@@ -4,15 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User CRUD</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to the external CSS file -->
 </head>
 <body>
     <h1>User List</h1>
-    <form action="/users/add" method="POST">
+    <div class="form-wrapper">
+    <form action="/users/add" method="POST"></form>
         <input type="text" name="name" placeholder="Name" required>
         <input type="email" name="email" placeholder="Email" required>
         <button type="submit">Add User</button>
     
     </form>
+    </div>
 <hr>
     <table border="1">
         <tr>
@@ -31,4 +34,3 @@
         </table>
 </body>
 </html>
-
