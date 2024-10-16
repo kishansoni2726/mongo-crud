@@ -46,8 +46,6 @@ jobs:
       - name: Mongodb Cert Setup
         run: |
           wget https://truststore.pki.rds.amazonaws.com/global/global-bundle.pem
-          mongo --ssl --host mongodb.cluster-cdkoqcek0drl.us-east-1.docdb.amazonaws.com:27017 --sslCAFile global-bundle.pem --username mongo --password admin123
-          mongodb://mongo:admin123@mongodb.cluster-cdkoqcek0drl.us-east-1.docdb.amazonaws.com:27017/?tls=true&tlsCAFile=global-bundle.pem&replicaSet=rs0&readPreference=secondaryPreferred&retryWrites=false 
       
       - name: Login to Amazon ECR
         run: |
