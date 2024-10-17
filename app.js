@@ -7,8 +7,8 @@ const app = express();
 const PORT = 3000;
 
 // Connect to MongoDB
-mongoose.connect('mongodb://mongo:admin123@mongodb.cdkoqcek0drl.us-east-1.docdb.amazonaws.com:27017/?tls=true&tlsCAFile=global-bundle.pem&retryWrites=false', {});
 
+let con = mongoose.connect('mongodb://mongo:admin123@mongodb.cluster-cdkoqcek0drl.us-east-1.docdb.amazonaws.com:27017/?tls=true&tlsCAFile=global-bundle.pem&replicaSet=rs0&readPreference=secondaryPreferred&retryWrites=false', {});
 // Middleware
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
