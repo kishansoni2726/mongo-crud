@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User CRUD</title>
     <link rel="stylesheet" href="style.css"> <!-- Link to the external CSS file -->
 </head>
+
 <body>
     <h1>User List</h1>
     <div class="form-wrapper">
-    <form action="/users/add" method="POST"></form>
+        <form action="/users/add" method="POST"></form>
         <input type="text" name="name" placeholder="Name" required>
         <input type="email" name="email" placeholder="Email" required>
         <button type="submit">Add User</button>
-    
-    </form>
+
+        </form>
     </div>
-<hr>
+    <hr>
     <table border="1">
         <tr>
             <th>Username</th>
@@ -24,13 +26,19 @@
             <th>Edit</th>
             <th>Remove</th>
         </tr>
-        <% users.forEach(user => { %>
+        <% users.forEach(user=> { %>
             <tr>
-                <td><%= user.name %></td> <td><%= user.email %></td>
-            <td><a href="/users/edit/<%= user._id %>">Edit</a></td>
-        <td><a href="/users/delete/<%= user._id %>">Delete</a></td>
+                <td>
+                    <%= user.name %>
+                </td>
+                <td>
+                    <%= user.email %>
+                </td>
+                <td><a href="/users/edit/<%= user._id %>">Edit</a></td>
+                <td><a href="/users/delete/<%= user._id %>">Delete</a></td>
             </tr>
-        <% }) %>
-        </table>
+            <% }) %>
+    </table>
 </body>
+
 </html>
