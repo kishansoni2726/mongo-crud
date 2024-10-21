@@ -59,13 +59,13 @@ jobs:
         
       - name: Tag Docker image
         run: |
-          docker tag crud:latest 254774371055.dkr.ecr.us-east-1.amazonaws.com/crud:latest
+          docker tag crud:latest 254774371055.dkr.ecr.us-east-1.amazonaws.com/crud-repo:latest
           #docker tag ${{ env.ECR_REPOSITORY }}:latest ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/${{ env.ECR_REPOSITORY }}:latest
       
       
       - name: Push Docker image to ECR
         run: |
-          docker push 254774371055.dkr.ecr.us-east-1.amazonaws.com/crud:latest
+          docker push 254774371055.dkr.ecr.us-east-1.amazonaws.com/crud-repo:latest
           #docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/${{ env.ECR_REPOSITORY }}:latest
 
       - name: List all files
