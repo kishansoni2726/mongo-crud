@@ -21,7 +21,7 @@
       ] 
     }
     ],
-      "executionRoleArn": "arn:aws:iam::254774371055:user/kishan",
-  "taskRoleArn": "arn:aws:iam::254774371055:user/kishan"
+      "executionRoleArn": "arn:aws:iam::254774371055:role/ecsTaskExecutionRole",
+  "taskRoleArn": "arn:aws:iam::254774371055:role/aws-service-role/ecs.amazonaws.com/AWSServiceRoleForECS"
 }
   
