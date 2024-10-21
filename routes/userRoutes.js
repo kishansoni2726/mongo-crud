@@ -9,10 +9,18 @@ router.get('/', async (req, res) => {
 });
 
 // Create a user
-router.post('/add', async (req, res) => {
-    const user = new User(req.body);
-    await user.save();
-    res.redirect('/');
+router.post('/users/add', async (req, res) => {
+    const { name, email } = req.body;
+
+    try {
+        const newUser = new User({ name, email });
+        console.log(newUser);
+        await newUser.save();
+        res.redirect('/'); // Redirect after successful addition
+    } catch (error) {
+        console.error("Error adding user:", error);
+        res.status(500).send("Error adding user");
+    }
 });
 
 // Edit a user

@@ -8,11 +8,14 @@ const PORT = 3000;
 
 // Connect to MongoDB
 
-let con = mongoose.connect('mongodb://mongo:admin123@mongodb.cluster-cdkoqcek0drl.us-east-1.docdb.amazonaws.com:27017/?tls=true&tlsCAFile=global-bundle.pem&replicaSet=rs0&readPreference=secondaryPreferred&retryWrites=false', {});
+
+let con = mongoose.connect('mongodb://mongo:admin123@mongo-crud.cluster-cdkoqcek0drl.us-east-1.docdb.amazonaws.com:27017/?tls=true&tlsCAFile=global-bundle.pem&replicaSet=rs0&readPreference=secondaryPreferred&retryWrites=false', {});
 // Middleware
 app.set('view engine', 'ejs');
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static('public'));
+// app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static('public'))
 
 // Routes
 app.use('/users', userRoutes);
