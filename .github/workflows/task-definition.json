@@ -20,6 +20,8 @@
         }
       ] 
     }
-    ]
+    ],
+      "executionRoleArn": "arn:aws:iam::254774371055:user/kishan",
+  "taskRoleArn": "arn:aws:iam::254774371055:user/kishan"
 }
   
