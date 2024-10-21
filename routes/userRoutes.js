@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
 });
 
 // Create a user
-router.post('/users/add', async (req, res) => {
+router.post('/add', async (req, res) => {
     const { name, email } = req.body;
 
     try {
