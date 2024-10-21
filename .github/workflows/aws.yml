@@ -6,7 +6,7 @@ on:
 
 env:
   AWS_REGION: us-east-1                       # Your preferred AWS region
-  ECR_REPOSITORY: crud                # Your Amazon ECR repository name
+  ECR_REPOSITORY: crud-repo                # Your Amazon ECR repository name
   ECS_SERVICE: crud              # Your Amazon ECS service name
   ECS_CLUSTER: crud              # Your Amazon ECS cluster name
   ECS_TASK_DEFINITION: task-definition.json # Path to your ECS task definition file
