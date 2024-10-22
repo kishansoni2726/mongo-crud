@@ -1,5 +1,11 @@
 {
     "family": "crud",
+    "requiresCompatibilities": [
+      "FARGATE"
+    ],
+    "networkMode": "awsvpc",
+    "cpu": "256",  
+    "memory": "512",
     "containerDefinitions": [
       {
         "name": "crud",
@@ -12,8 +18,8 @@
             "containerPort": 3000,
             "hostPort": 3000
         }
-      ]
+      ] 
     }
-  ]
+    ]
 }
   
