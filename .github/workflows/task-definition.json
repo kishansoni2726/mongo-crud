@@ -21,7 +21,7 @@
       ] 
     }
     ],
-     "executionRoleArn": "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy",
-  "taskRoleArn": "arn:aws:iam::aws:policy/AmazonEC2ContainerServiceforEC2Role"
+     "executionRoleArn": "arn:aws:iam::254774371055:role/ecsTaskExecutionRole",
+  "taskRoleArn": null
 }
   
