@@ -20,11 +20,7 @@
         }
       ] 
     }
-<<<<<<< HEAD
-    ]
-=======
     ],
      "executionRoleArn": "arn:aws:iam::254774371055:role/ecsTaskExecutionRole"
->>>>>>> 88296441bdc48528e957f1218fd376fb13884b46
 }
   
