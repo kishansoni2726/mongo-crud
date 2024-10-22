@@ -27,6 +27,7 @@ router.post('/add', async (req, res) => {
 router.get('/edit/:id', async (req, res) => {
     const user = await User.findById(req.params.id);
     res.render('edit', { user });
+    res.redirect('/');
 });
 
 // Update a user
